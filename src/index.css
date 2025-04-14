@@ -4,23 +4,17 @@
 
 @layer base {
   :root {
-    --primary-bg: #cbe76a;
-    --hover-bg: #b8d95c;
     --primary-text: #1b3c5e;
-    --secondary-text: rgba(20, 52, 56, 0.8);
     --half-white: rgba(255, 255, 255, 0.7);
     /* Added for .untimed and .timed */
     --hue: 210;
-    /* Moved from .bg-radial-custom for reusability */
-    --dark-overlay: rgba(0, 0, 0, 0.32);
     /* For active states and buttons */
     --light-overlay: rgba(0, 0, 0, 0.1);
     /* For inactive states */
     --board-bg: #1f2933;
     /* For .board-wrap */
-    --game-bg: #b5bdc5;
-    /* For .game-wrap */
-
+    --score-board: #0f1f33;
+    /* For score board */
   }
 
   .board-wrap {
@@ -66,13 +60,14 @@
   }
 
   .untimed {
-    @apply mode-toggle;
+    @apply mode-toggle hover:bg-white hover:text-[var(--primary-text)];
     color: var(--half-white);
     background-color: var(--light-overlay);
+
   }
 
   .timed {
-    @apply mode-toggle;
+    @apply mode-toggle hover:bg-white hover:text-[var(--primary-text)];
     color: var(--half-white);
     background-color: var(--light-overlay);
   }
@@ -111,6 +106,7 @@
   .word-display {
     @apply flex justify-center mt-4 gap-1 text-white;
   }
+  
 }
 
 

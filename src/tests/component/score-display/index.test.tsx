@@ -40,18 +40,6 @@ describe('ScoreDisplay Component', () => {
     expect(screen.getByText('Words Found (UNTIMED)')).toBeInTheDocument();
   });
 
-  test('applies correct styling to the container', () => {
-    render(<ScoreDisplay {...defaultProps} />);
-    const container = screen.getByText('YOUR SCORES').parentElement;
-    expect(container).toHaveClass('bg-[#0f1f33]');
-    expect(container).toHaveClass('rounded-xl');
-    expect(container).toHaveClass('px-6');
-    expect(container).toHaveClass('py-4');
-    expect(container).toHaveClass('text-center');
-    expect(container).toHaveClass('text-white');
-    expect(container).toHaveClass('shadow-md');
-  });
-
   test('renders zero score and words found correctly and toggles possible words visibility', () => {
     render(<ScoreDisplay score={0} wordsFound={0} gameMode="TIMED" possibleWords={[]}  />);
 

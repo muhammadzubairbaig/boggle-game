@@ -2,9 +2,13 @@
 
 This project is a web-based implementation of the classic word game **Boggle**, developed using **React** and **TypeScript**. In Boggle, players form words by connecting adjacent letters (horizontally, vertically, or diagonally) on a grid. The game supports two board sizes (4x4 and 5x5) and two game modes (Timed and Untimed). It leverages React Query for data fetching and caching, TypeScript for type safety, and Jest with React Testing Library for unit testing. The application features a responsive user interface, score tracking, and a dictionary validation system to ensure only valid words are accepted.
 
-The game also includes a "possible words" feature that computes and displays all valid words that can be formed on the current board, helping players understand the board's potential. The UI is designed to be responsive, accessible, and styled with Tailwind CSS.
+The game also includes a possible words feature that computes and displays all valid words that can be formed on the current board, helping players understand the board's potential. The UI is designed to be responsive, accessible, and styled with Tailwind CSS.
 
 **Live Preview**: Try the game online at [https://boggle-game-demo.netlify.app](https://boggle-game-demo.netlify.app).
+
+## Screenshot
+
+![Game UI](./src/assets/boggle-game.png)
 
 ## Features
 
@@ -88,8 +92,6 @@ boggle/
 │   │   │   │   └── index.test.tsx
 │   │   │   ├── score-display/
 │   │   │   │   └── index.test.tsx
-│   │   │   └── timer/
-│   │   │       └── index.test.tsx
 │   │   └── utils/
 │   │       ├── board/
 │   │       │   └── index.test.tsx

@@ -32,7 +32,7 @@ export const GameControls: React.FC<GameControlsProps> = ({
           <button
             key={size}
             onClick={() => onBoardSizeChange(size)}
-            className={`btn-bordered ${boardSize === size ? 'bg-white text-[var(--primary-text)] font-bold' : 'bg-[var(--primary-text)] text-white'}`}
+            className={`btn-bordered ${boardSize === size && 'bg-white text-[var(--primary-text)] font-bold'}`}
             aria-pressed={boardSize === size}
           >
             {`${size}x${size}`}
@@ -58,7 +58,7 @@ export const GameControls: React.FC<GameControlsProps> = ({
     </div>
     <button
       onClick={onNewGame}
-      className="mt-4 px-6 py-2 border border-white rounded-full hover:bg-white hover:text-[#1b3c5e] transition-all duration-200 font-semibold"
+      className="mt-4 px-6 py-2 border border-white rounded-full hover:bg-white hover:text-[var(--primary-text)] transition-all duration-200 font-semibold"
     >
       NEW GAME
     </button>

@@ -4,7 +4,7 @@ interface ScoreDisplayProps {
   score: number;
   wordsFound: number;
   gameMode: 'TIMED' | 'UNTIMED';
-  possibleWords: string[] | null; // Allow null for defensive programming
+  possibleWords: string[] | null;
 }
 
 /**
@@ -32,7 +32,7 @@ export const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
   return (
     <div>
       {/* Score and Words Found Section */}
-      <div className="bg-[#0f1f33] rounded-xl px-6 py-4 text-center text-white shadow-md">
+      <div className="bg-[var(--score-board)] rounded-xl px-6 py-4 text-center text-white shadow-md">
         <h2 className="text-sm text-gray-300 mb-4">YOUR SCORES</h2>
         <div className="space-y-4">
           <div>
@@ -49,7 +49,7 @@ export const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
       {/* Possible Words Section */}
       <div className="mt-4 w-full max-w-md">
         <button
-          className="bg-[#0f1f33] rounded-xl px-4 py-2 text-sm text-white shadow-md hover:bg-[#1a2b4d] transition duration-300"
+          className="bg-[var(--score-board)] rounded-xl px-4 py-2 text-sm text-white shadow-md hover:bg-[#1a2b4d] transition duration-300"
           onClick={togglePossibleWordsVisibility}
           aria-expanded={!isPossibleWordsVisible}
           aria-controls="possible-words-list"
@@ -60,7 +60,7 @@ export const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
         {isPossibleWordsVisible && (
           <div
             id="possible-words-list"
-            className="bg-[#0f1f33] rounded-xl px-6 py-4 text-center text-white shadow-md mt-4 transition-opacity duration-300"
+            className="bg-[var(--score-board)] rounded-xl px-6 py-4 text-center text-white shadow-md mt-4 transition-opacity duration-300"
             role="region"
             aria-live="polite"
           >

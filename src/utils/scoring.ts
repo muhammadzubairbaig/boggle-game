@@ -1,12 +1,5 @@
 /**
  * Calculates the score for a given word based on its length.
- * Scoring rules:
- * - Less than 3 letters: 0 points
- * - 3 letters: 1 point
- * - 4 letters: 2 points
- * - 5 letters: 3 points
- * - 6 letters: 5 points
- * - 7 or more letters: length points
  * @param word - The word to score
  * @returns The score for the word
  */

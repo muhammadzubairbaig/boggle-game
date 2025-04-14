@@ -137,13 +137,11 @@ export const useGameReducer = ({ boardSize, dictionary }: UseGameReducerProps) =
   const handleEndGame = useCallback(() => {
     dispatch({ type: 'SET_RUNNING', payload: false });
     dispatch({ type: 'SET_TIME_UP', payload: true });
-    alert(`Game Over! Your final score is: ${state.score}`);
   }, [state.score]);
 
   const handleTimeUp = useCallback(() => {
     dispatch({ type: 'SET_RUNNING', payload: false });
     dispatch({ type: 'SET_TIME_UP', payload: true });
-    alert(`Game Over! Your final score is: ${state.score}`);
   }, [state.score]);
 
   const handleGameModeChange = useCallback((mode: 'TIMED' | 'UNTIMED') => {

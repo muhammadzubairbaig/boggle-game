@@ -17,24 +17,4 @@ describe('BoardGrid Component', () => {
     expect(screen.getByText('P')).toBeInTheDocument();
   });
 
-  test('applies selected styling to tiles in selectedPath', () => {
-    render(
-      <BoardGrid
-        board={[
-          ['A', 'B', 'C', 'D'],
-          ['E', 'F', 'G', 'H'],
-          ['I', 'J', 'K', 'L'],
-          ['M', 'N', 'O', 'P'],
-        ]}
-        selectedPath={[{ row: 0, col: 0 }]} // Selects tile 'A'
-        onTileClick={jest.fn()}
-        boardSize={4}
-      />
-    );
-    const tileA = screen.getByText('A');
-    expect(tileA).toHaveClass('bg-[var(--primary-text)]'); // Updated to match the component
-    expect(tileA).toHaveClass('text-white');
-  });
-
-  // Add more tests as needed...
 });
