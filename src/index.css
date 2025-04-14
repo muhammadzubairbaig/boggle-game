@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-bg: #cbe76a;
+    --hover-bg: #b8d95c;
+    --primary-text: #1b3c5e;
+    --secondary-text: rgba(20, 52, 56, 0.8);
+    --half-white: rgba(255, 255, 255, 0.7);
+    /* Added for .untimed and .timed */
+    --hue: 210;
+    /* Moved from .bg-radial-custom for reusability */
+    --dark-overlay: rgba(0, 0, 0, 0.32);
+    /* For active states and buttons */
+    --light-overlay: rgba(0, 0, 0, 0.1);
+    /* For inactive states */
+    --board-bg: #1f2933;
+    /* For .board-wrap */
+    --game-bg: #b5bdc5;
+    /* For .game-wrap */
+
+  }
+
+  .board-wrap {
+    border-radius: 32px;
+    background: #1f2933;
+    z-index: 0;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .game-wrap {
+    background: #b5bdc5;
+    width: calc(100% - 24px);
+    margin: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  body {
+    @apply m-0 font-sans antialiased;
+  }
+}
+
+
+@layer components {
+
+  /* Reusable Button Styles */
+  .btn-bordered {
+    @apply border border-white rounded-full px-4 py-2 text-white font-semibold transition-all duration-200 hover:bg-white hover:text-[var(--primary-text)];
+  }
+
+  .btn-bordered-sm {
+    @apply btn-bordered px-3 py-1 text-sm;
+  }
+
+  .btn-toggle {
+    @apply bg-[var(--board-bg)] rounded-xl px-4 py-2 text-sm text-white shadow-md hover:bg-[#1a2b4d] transition duration-300;
+  }
+
+  /* Game Mode Toggle Button (Refined from Existing) */
+  .mode-toggle {
+    @apply border border-white rounded-full px-4 py-2 mx-1 transition-all duration-200;
+  }
+
+  .untimed {
+    @apply mode-toggle;
+    color: var(--half-white);
+    background-color: var(--light-overlay);
+  }
+
+  .timed {
+    @apply mode-toggle;
+    color: var(--half-white);
+    background-color: var(--light-overlay);
+  }
+
+  .active {
+    @apply font-bold;
+    color: var(--primary-text);
+    background-color: white;
+  }
+
+  /* Card Container (e.g., for ScoreDisplay, Board sections) */
+  .card-container {
+    @apply bg-[var(--board-bg)] rounded-xl px-6 py-4 text-center text-white shadow-md;
+  }
+
+  /* Word List (for submitted words and possible words) */
+  .word-list {
+    @apply p-2 text-gray-200 text-start space-y-1 max-h-40 overflow-y-auto;
+  }
+
+  .word-list-item {
+    @apply text-xs sm:text-sm uppercase animate-fade-in text-white;
+  }
+
+  /* Timer Display */
+  .timer-display {
+    @apply text-xl font-bold text-white;
+  }
+
+  /* Error and Alert Messages */
+  .alert-error {
+    @apply text-red-700 font-bold mt-4 text-lg sm:text-xl;
+  }
+
+  /* Word Display (for selected path in Board) */
+  .word-display {
+    @apply flex justify-center mt-4 gap-1 text-white;
+  }
+}
+
+
+/* Background with Radial Gradient */
+@layer utilities {
+  .bg-radial-custom {
+    background: radial-gradient(#315372, hsl(var(--hue) 40% 16%));
+  }
+
+  /* Fade-in Animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+
+
+/* Code Styling */
+@layer base {
+  code {
+    @apply font-mono;
+  }
+}
